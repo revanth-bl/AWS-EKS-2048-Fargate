@@ -1,0 +1,27 @@
+# ==========================================================
+# Namespace: 2048 Game
+# ==========================================================
+#
+# This Namespace creates an isolated environment for
+# all resources related to the 2048 Game application.
+#
+# Resources inside this namespace:
+#
+# • Deployment
+# • Pods
+# • Service
+# • Ingress
+#
+# Benefits:
+# - Better organization
+# - Easier management
+# - Resource isolation
+# - Simplified cleanup
+#
+# ==========================================================
+
+apiVersion: v1
+kind: Namespace
+
+metadata:
+  name: game-2048

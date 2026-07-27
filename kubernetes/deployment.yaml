@@ -1,0 +1,57 @@
+# ==========================================================
+# Deployment: 2048 Game
+# ==========================================================
+# This Deployment creates and manages the 2048 Game Pods.
+#
+# Responsibilities:
+# - Creates Pods
+# - Maintains desired replica count
+# - Automatically restarts failed Pods
+# - Supports rolling updates
+#
+# Namespace:
+# game-2048
+# ==========================================================
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: deployment-2048
+  namespace: game-2048
+
+spec:
+  replicas: 5
+
+  selector:
+    matchLabels:
+      app: app-2048
+
+  template:
+    metadata:
+      labels:
+        app: app-2048
+
+    spec:
+      containers:
+
+      - name: app-2048
+
+        image: public.ecr.aws/l6m2t8p7/docker-2048:latest
+
+        imagePullPolicy: Always
+
+        ports:
+        - containerPort: 80
+
+        resources:
+
+          requests:
+            cpu: "250m"
+            memory: "64Mi"
+
+          limits:
+            cpu: "500m"
+            memory: "128Mi"
+
+---

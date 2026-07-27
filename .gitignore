@@ -1,0 +1,60 @@
+# ==========================================================
+# AWS EKS 2048 Fargate Project
+# .gitignore
+# ==========================================================
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# Vim
+*.swp
+
+# Kubernetes Config
+.kube/
+
+# AWS Credentials (NEVER COMMIT)
+.aws/
+credentials
+config
+
+# Environment Variables
+.env
+.env.*
+
+# Logs
+*.log
+
+# Temporary Files
+*.tmp
+*.temp
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# Python
+__pycache__/
+*.pyc
+
+# Node.js
+node_modules/
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+
+# Backup Files
+*.bak
+*.old

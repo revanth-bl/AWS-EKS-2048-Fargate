@@ -1,0 +1,58 @@
+# ==========================================================
+# Ingress: 2048 Game
+# ==========================================================
+#
+# This Ingress exposes the 2048 Game to the Internet
+# using an AWS Application Load Balancer (ALB).
+#
+# The AWS Load Balancer Controller watches this
+# resource and automatically creates:
+#
+# • Application Load Balancer (ALB)
+# • Target Groups
+# • Listener Rules
+# • Health Checks
+#
+# Namespace:
+# game-2048
+#
+# ==========================================================
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+
+metadata:
+  name: ingress-2048
+  namespace: game-2048
+
+  annotations:
+
+    kubernetes.io/ingress.class: alb
+
+    alb.ingress.kubernetes.io/scheme: internet-facing
+
+    alb.ingress.kubernetes.io/target-type: ip
+
+spec:
+
+  ingressClassName: alb
+
+  rules:
+
+  - http:
+
+      paths:
+
+      - path: /
+
+        pathType: Prefix
+
+        backend:
+
+          service:
+
+            name: service-2048
+
+            port:
+
+              number: 80

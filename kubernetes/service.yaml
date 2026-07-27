@@ -1,0 +1,38 @@
+# ==========================================================
+# Service: 2048 Game
+# ==========================================================
+#
+# This Service exposes the 2048 Game Pods inside
+# the Kubernetes cluster.
+#
+# The Service provides a stable endpoint so that
+# the Ingress can route external traffic to the Pods.
+#
+# Responsibilities:
+# • Stable Network Endpoint
+# • Service Discovery
+# • Internal Load Balancing
+# • Connects Ingress to Pods
+#
+# Namespace:
+# game-2048
+#
+# ==========================================================
+
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: service-2048
+  namespace: game-2048
+
+spec:
+  selector:
+    app: app-2048
+
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
+  type: NodePort
