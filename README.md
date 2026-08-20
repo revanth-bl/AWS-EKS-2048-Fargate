@@ -1172,5 +1172,3 @@ During this project, you learned how to:
 - Verify and troubleshoot Kubernetes resources
 
 This project demonstrates practical experience with **AWS**, **Kubernetes**, **Amazon EKS**, **AWS Fargate**, **IAM**, **Helm**, **Ingress**, and the **AWS Load Balancer Controller**, making it an excellent portfolio project for DevOps and Cloud Engineering roles.
-
-1 2 3 4 5 CLEA 6 7 8 9 10  11 12
